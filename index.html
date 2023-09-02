@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password verifier</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <form action="try.html">
+        <input type="text" placeholder="Enter user id..." id="input">
+        <input type="password" name="" placeholder="Enter your password" id="pass">
+        <input type="submit" value="submit" id="submit">
+    </form>
+    <script>
+        document.getElementById("submit").onclick=function(){
+            let user=["Ganga123","Rama123"];
+            let password=["Ganga@123","Rama@123"];
+            let inp=document.getElementById("input").value;
+            let pass=document.getElementById("pass").value;
+            let c=0;
+            for(let i=0;i<user.length;i++){
+                if(user[i]==inp && password[i]==pass){
+                    c++;
+                }
+            }
+            if(c==0){
+                alert("Please try to enter a valid user ID and password");
+                return false;
+            }
+            else{
+                return true;
+            }
+        }
+    </script>
+</body>
+</html>
